@@ -1,0 +1,19 @@
+document.write(p1.innerHTML) innerHTML : pegará o código html 
+    --EX:Aprendendo a usar o <strong>DOM</strong> em JS--
+
+document.write(p1.innerHTML) innerText : pegará o texto 
+    --EX:Aprendendo a usar o DOM em JS--
+        
+p1.style.color = 'blue'
+var corpo = window.document.body
+corpo.style.background = 'grey'
+window.document.write('Está escrito assim:  ' + p1.innerText)
+
+var d = window.document.getElementById('msg')
+    d.style.background = 'green'
+    d.innerText = 'Clique em mim não'
+    window.document.getElementById('msg').innerText = 'Clique'
+
+var d = window.document.getElementsByName('msg')[0] 
+    -->QUANDO SER ELEMENTS NO PLURAL SEMPRE COLOCAR ARRAY 
+        E SELECIONAR O ITEM DESEJADO

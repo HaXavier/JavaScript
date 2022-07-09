@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+        h1 {
+            margin-left: -20px;
+            padding: 15px;
+            background-color: cornflowerblue;
+            font: normal 25pt Arial;
+        }
+        p {
+            font: normal 15pt Arial;
+        }
+        fieldset {
+            border-color: black;
+            margin: 10px 100px auto 100px;
+        }
+        legend {
+            font: normal 20pt Arial;
+
+        }
+        div {
+            margin: 10px auto auto 100px;
+        }
+        input {
+            transition: background-color .4s;
+        }
+        input:hover { 
+            background-color: #606060;
+        }   
+        input#cPais{
+            /* -moz-appearance: none; 
+            -webkit-appearance: none;
+            appearance: none; */
+
+            /* box */
+            width: 100%;
+            border-radius: 5px;
+            padding: 16px 0;
+            border:none;
+            border-bottom: 2px solid rgb(0, 0, 0);
+
+            /* background-color: rgba(0, 0, 0, .5); */
+
+            outline: none;
+
+            /* text */
+            color: black;
+            font-size: 1em;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Sistema Passaporte</h1>
+    <fieldset><legend>Preencha o Sistema</legend>
+        <p><label for="cPais">País: </label><input type="text" name="cPais" id="cPais" size="10" maxlength="25" placeholder="  Ex:França" list="paises"></p>
+        <datalist id="paises">
+            <option>  Brasil</option>
+            <option>  EUA</option>
+            <option>  França</option>
+        </datalist>
+        <input type="button" id="botao" onclick="verifica()" value="Verificar">
+    </fieldset>
+    <div id="res"></div>
+    <script>
+        function verifica() {
+            var txtp = window.document.querySelector('input#cPais')
+            var res = window.document.querySelector('div#res')
+            var pais = String(txtp.value)
+            res.innerHTML = `Nasceu no país: <strong>${pais}<strong><br>`
+            if (pais == 'Brasil') {
+                res.innerHTML += `Então você é <strong>Brasileiro</strong> Lindo`             
+            } else {
+                res.innerHTML += `Você é <strong>Estrangeiro</strong>`
+            }
+        }
+
+    </script>
+
+</body>
+</html>
